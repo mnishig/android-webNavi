@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WebNavi</string>
+    <string name="header_title">WebNavi ver. 0.1</string>
+
+    <!-- for drawer -->
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <string name="drawer_menuSettings">settings</string>
+    <string name="drawer_menuExit">exit</string>
+</resources>
