@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:id="@+id/fragment"-->
-    <!--android:name="red.txn.frag07.MainActivityFragment"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-    <!--&lt;!&ndash;tools:layout="@layout/fragment_main">&ndash;&gt;-->
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityFragment"
     tools:layout_editor_absoluteY="137dp">
-    <!--tools:showIn="@layout/activity_main">-->
 
     <TextView
         android:id="@+id/textView"
@@ -34,8 +24,5 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-    <!--app:layout_constraintTop_toBottomOf="@+id/textView"-->
-    <!--android:layout_marginTop="24dp"-->
 
 </android.support.constraint.ConstraintLayout>
-<!--</fragment>-->
