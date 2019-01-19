@@ -8,4 +8,6 @@
 
     <string name="drawer_menuSettings">settings</string>
     <string name="drawer_menuExit">exit</string>
+
+    <string name="la_authMethod">auth.getAuthenticationToken</string>
 </resources>
