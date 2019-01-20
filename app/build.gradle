@@ -35,7 +35,7 @@ dependencies {
 
 
 
-    implementation ('com.cafex:liveassist-android:1.2.3') {
+    implementation('com.cafex:liveassist-android:1.2.3') {
 //        transitive = false
 //        exclude group: 'androidx.core.app', module: 'CoreComponentFactory'
 //        exclude group: 'androidx.core.app', module: 'notificationcompat'
