@@ -1,5 +1,6 @@
 package red.txn.webNavi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -53,13 +54,14 @@ public class MainActivity extends AppCompatActivity
                 Log.d(TAG, "settings tapped");
 
                 // TODO: start preferenceFlagment
+                Intent intent = new Intent(this, PrefActivity.class);
+                startActivity(intent);
 
                 break;
 
             case R.id.menuExit:
                 Log.d(TAG, "exit tapped");
 
-                // TODO: exit application
                 this.finish();
                 this.moveTaskToBack(true);
                 break;

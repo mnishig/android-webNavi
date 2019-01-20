@@ -3,7 +3,10 @@ package red.txn.webNavi;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,8 +28,11 @@ import com.cafex.liveassist.LiveAssistView;
 public class MainActivityFragment extends Fragment implements LiveAssistDelegate {
 
     final String TAG = "MainActivityFragment";
-    final String url = "https://txn.myds.me/api/login.html";
-//    final String url = "https://startpage.com";
+
+    private String url_ = "https://";
+//    private String url_ = "https://txn.myds.me/api/login.html";
+    private String authMethod_ = "";
+    private Integer accountId_ = -1;
 
     private String jwt_;
 
@@ -40,6 +46,16 @@ public class MainActivityFragment extends Fragment implements LiveAssistDelegate
 
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getContext());
+        url_ += prefs.getString( getString(R.string.pref_key_webUrl),
+                                getString(R.string.pref_default_webUrl) );
+        authMethod_ = prefs.getString( getString(R.string.pref_key_authMethod),
+                                       getString(R.string.pref_default_authMethod) );
+        String tmp = prefs.getString( getString(R.string.pref_key_la365Account),
+                                      getString(R.string.pref_default_la365Account) );
+
+        accountId_ = Integer.parseInt(tmp);
+
         this.setupWebView(v);
 
         this.setupLiveAssistView(v);
@@ -48,14 +64,14 @@ public class MainActivityFragment extends Fragment implements LiveAssistDelegate
     }
 
     private void setupLiveAssistView(View v) {
-        int acountId = 23320646;
+//        int accountId = 23320646;
         String[] sections = {"android"};
         LiveAssistChatStyle chatStyle = LiveAssistChatStyle.AUTO;
-        LiveAssistConfig config = new LiveAssistConfig(acountId, sections, chatStyle);
+        LiveAssistConfig config = new LiveAssistConfig(accountId_, sections, chatStyle);
 
 //        config.setJavascriptMethodName(getResources().getString(R.string.la_authMethod));
-//        config.setJavascriptMethodName("getJwt");
-        config.setJavascriptMethodName("auth.getAuthenticationToken");
+//        config.setJavascriptMethodName("auth.getAuthenticationToken");
+        config.setJavascriptMethodName(authMethod_);
         config.setLiveAssistDelegate(this);
 
         LiveAssistView laView = v.findViewById(R.id.liveAssistView);
@@ -71,7 +87,7 @@ public class MainActivityFragment extends Fragment implements LiveAssistDelegate
         settings.setJavaScriptEnabled(true);
         wv.addJavascriptInterface(new JSInterface(this.getContext()), "android");
 
-        wv.loadUrl(url);
+        wv.loadUrl(url_);
     }
 
     @Override

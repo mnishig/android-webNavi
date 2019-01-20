@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:capitalize="none"
+        android:defaultValue="@string/pref_default_webUrl"
+        android:inputType="textUri"
+        android:key="webUrl"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_webUrl" />
+
+    <EditTextPreference
+        android:capitalize="none"
+        android:defaultValue="@string/pref_default_la365Account"
+        android:inputType="number"
+        android:key="la365Account"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:title="@string/pref_title_la365Account" />
+
+    <EditTextPreference
+        android:capitalize="none"
+        android:defaultValue="@string/pref_default_authMethod"
+        android:inputType="text"
+        android:key="authMethod"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:title="@string/pref_title_authMethod" />
+
+
+</PreferenceScreen>

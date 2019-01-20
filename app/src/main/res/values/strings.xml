@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">WebNavi</string>
-    <string name="header_title">WebNavi ver. 0.1</string>
+    <string name="app_name">LA365 auth chat2</string>
+    <string name="header_title">LA365 auth chat ver.1.0</string>
 
     <!-- for drawer -->
     <string name="drawer_open">Drawer Open</string>
@@ -9,5 +9,22 @@
     <string name="drawer_menuSettings">settings</string>
     <string name="drawer_menuExit">exit</string>
 
-    <string name="la_authMethod">auth.getAuthenticationToken</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <string name="pref_title_webUrl">(chat embedded) Web URL:</string>
+    <string name="pref_default_webUrl">yyy.com/chat/zzz</string>
+
+    <string name="pref_title_la365Account">LA365 accountId:</string>
+    <string name="pref_default_la365Account">123456</string>
+
+    <string name="pref_title_authMethod">associate authMethod</string>
+    <string name="pref_default_authMethod">auth.getAuthority</string>
+
+
+    <string name="pref_key_webUrl">webUrl</string>
+    <string name="pref_key_la365Account">la365Account</string>
+    <string name="pref_key_authMethod">authMethod</string>
+
 </resources>
